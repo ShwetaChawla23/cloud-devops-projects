@@ -1,0 +1,55 @@
+title = "Custom Gitleaks Configuration for Passwords"
+
+# 1. Generic Hardcoded Passwords (e.g. password = "xyz", pwd: 'abc')
+[[rules]]
+id = "generic-password"
+description = "Hardcoded Password Detected"
+regex = '''(?i)(password|passwd|pass|pwd|secret|client_secret|auth_token)\s*[:=]\s*["']?([^"'\s#;]{3,})["']?'''
+keywords = [
+    "password",
+    "passwd",
+    "pass",
+    "pwd",
+    "secret",
+    "client_secret",
+    "auth_token"
+]
+
+# 2. Database Passwords & Connection Strings (e.g. mongodb://user:pass@host)
+[[rules]]
+id = "db-password"
+description = "Database Credentials or Connection String Detected"
+regex = '''(?i)(postgres|mysql|mongodb|redis|mssql):\/\/[a-zA-Z0-9_-]+:([^@\s]+)@'''
+keywords = [
+    "postgres",
+    "mysql",
+    "mongodb",
+    "redis",
+    "mssql"
+]
+
+# 3. Environment Variable Passwords (e.g. DB_PASS=mySecret123)
+[[rules]]
+id = "env-password"
+description = "Environment Secret / Password Detected"
+regex = '''(?i)(DB_PASS|DB_PASSWORD|MYSQL_PASSWORD|POSTGRES_PASSWORD|SECRET_KEY|API_SECRET)\s*=\s*["']?([^"'\s#;]+)["']?'''
+keywords = [
+    "DB_PASS",
+    "DB_PASSWORD",
+    "MYSQL_PASSWORD",
+    "POSTGRES_PASSWORD",
+    "SECRET_KEY",
+    "API_SECRET"
+]
+
+# 4. API Keys & Bearer Tokens
+[[rules]]
+id = "api-key-or-token"
+description = "API Key or Bearer Token Detected"
+regex = '''(?i)(api[_-]?key|bearer\s+[a-zA-Z0-9_\-\.]{20,})'''
+keywords = [
+    "api_key",
+    "apikey",
+    "api-key",
+    "bearer"
+]

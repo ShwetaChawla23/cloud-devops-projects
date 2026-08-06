@@ -1,0 +1,42 @@
+[
+ {
+  "RuleID": "generic-password",
+  "Description": "Hardcoded Password Detected",
+  "StartLine": 104,
+  "EndLine": 104,
+  "StartColumn": 12,
+  "EndColumn": 56,
+  "Match": "password                  = \"Password@123456\"",
+  "Secret": "password",
+  "File": "terraform.tfvars",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 2.75,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [],
+  "Fingerprint": "terraform.tfvars:generic-password:104"
+ },
+ {
+  "RuleID": "generic-password",
+  "Description": "Hardcoded Password Detected",
+  "StartLine": 129,
+  "EndLine": 129,
+  "StartColumn": 12,
+  "EndColumn": 56,
+  "Match": "password                  = \"Password@123456\"",
+  "Secret": "password",
+  "File": "terraform.tfvars",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 2.75,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [],
+  "Fingerprint": "terraform.tfvars:generic-password:129"
+ }
+]
