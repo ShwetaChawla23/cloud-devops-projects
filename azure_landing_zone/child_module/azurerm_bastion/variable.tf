@@ -1,2 +1,4 @@
-variable "bastion" {}
+variable "bastion" {
+    type = map(any)
+}
 

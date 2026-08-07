@@ -1,2 +1,4 @@
-variable "vnet" {}
+variable "vnet" {
+    type = map(any)
+}
 
